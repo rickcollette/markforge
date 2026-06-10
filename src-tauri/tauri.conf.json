@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MarkForge",
+  "version": "1.0.0",
+  "identifier": "com.markforge.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDIzOUZFQjMyMUQ0NjBBMjgKUldRb0NrWWRNdXVmSXh2aVBhSzBlSG15SWhGaXEwNENQQUlxVFViVE5KdjlCanNKc0RxbWtHRWIK",
+      "endpoints": [
+        "https://markforge.rickcollette.org/latest.json",
+        "https://github.com/rickcollette/markforge/releases/latest/download/latest.json"
+      ]
+    }
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MarkForge",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 900,
+        "minHeight": 600,
+        "center": true,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'; connect-src 'self' ipc: http://ipc.localhost",
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Productivity",
+    "fileAssociations": [
+      {
+        "ext": ["md", "markdown", "mdown", "mkd"],
+        "name": "Markdown Document",
+        "description": "Markdown document",
+        "mimeType": "text/markdown",
+        "role": "Editor"
+      },
+      {
+        "ext": ["mmd", "mermaid"],
+        "name": "Mermaid Diagram",
+        "description": "Mermaid diagram source",
+        "mimeType": "text/vnd.mermaid",
+        "role": "Editor"
+      }
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller"
+      }
+    },
+    "publisher": "Rick Collette",
+    "copyright": "© 2026 Rick Collette (megalith@root.sh)",
+    "license": "MIT",
+    "homepage": "https://markforge.rickcollette.org/",
+    "shortDescription": "Markdown editor with Mermaid Studio",
+    "longDescription": "MarkForge is a professional-grade, cross-platform Markdown editor with first-class Mermaid diagram authoring, preview, validation, and export.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

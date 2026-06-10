@@ -1,0 +1,45 @@
+[package]
+name = "markforge"
+version = "1.0.0"
+description = "MarkForge — Markdown editor with Mermaid Studio"
+authors = ["Rick Collette <megalith@root.sh>"]
+repository = "https://github.com/rickcollette/markforge"
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "markforge_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+thiserror = "2"
+pulldown-cmark = "0.12"
+notify = "8"
+walkdir = "2"
+ignore = "0.4"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6"
+base64 = "0.22"
+docx-rs = "0.4"
+tauri-plugin-single-instance = "2.4.2"
+tauri-plugin-updater = "2.10.1"
+tauri-plugin-process = "2.3.1"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

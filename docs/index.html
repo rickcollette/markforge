@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MarkForge — Markdown editor with Mermaid Studio</title>
+  <meta name="description" content="MarkForge is a fast, offline-first desktop Markdown editor with first-class Mermaid diagram authoring, live preview, and powerful export. Windows and Linux." />
+  <meta property="og:title" content="MarkForge — Markdown editor with Mermaid Studio" />
+  <meta property="og:description" content="A professional-grade desktop Markdown editor with first-class Mermaid diagrams. Free and open source." />
+  <meta property="og:image" content="https://markforge.rickcollette.org/assets/03-split-mermaid-dark.png" />
+  <meta property="og:url" content="https://markforge.rickcollette.org/" />
+  <link rel="canonical" href="https://markforge.rickcollette.org/" />
+  <link rel="icon" type="image/png" href="assets/Logo_Icon_Large.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/Logo_Icon_Large.png" alt="" class="brand-icon" />
+        <img src="assets/Logo_Lettering_Large.png" alt="MarkForge" class="brand-lettering" />
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+        <a href="https://github.com/rickcollette/markforge" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <img src="assets/Logo_Icon_Large.png" alt="" class="hero-icon" />
+    <img src="assets/Logo_Lettering_Large.png" alt="MarkForge" class="hero-lettering" />
+    <p class="tagline">Markdown editing with first-class Mermaid diagrams.</p>
+    <p class="subtitle">
+      A fast, offline-first desktop editor built with Tauri 2 and Rust.
+      Live preview, a dedicated Mermaid Studio, workspaces, linting, and
+      export to HTML, PDF, DOCX, and Reveal.js — all in a ~10&nbsp;MB app.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#download">Download</a>
+      <a class="btn" href="https://github.com/rickcollette/markforge" target="_blank" rel="noopener">View Source</a>
+    </div>
+    <img src="assets/03-split-mermaid-dark.png" alt="MarkForge split view with a rendered Mermaid flowchart" class="hero-shot" />
+  </header>
+
+  <main>
+    <section id="features" class="section">
+      <h2>Everything a Markdown power user needs</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Mermaid Studio</h3>
+          <p>A dedicated diagram mode with 9 templates, live validation, zoom/pan preview, theme selection, and SVG/PNG export — then insert straight into your document.</p>
+        </div>
+        <div class="card">
+          <h3>Live preview</h3>
+          <p>Sanitized markdown-it pipeline with callouts, task lists, footnotes, and TOC. Six preview themes and bidirectional scroll sync in split view.</p>
+        </div>
+        <div class="card">
+          <h3>Inline diagrams</h3>
+          <p>Every <code>```mermaid</code> fence renders independently with a content-hash cache. A broken diagram shows an error card — never a broken preview.</p>
+        </div>
+        <div class="card">
+          <h3>Monaco editor</h3>
+          <p>The VS Code editor core, with Mermaid syntax highlighting inside fences, multi-cursor, snippets, and Markdown-aware list continuation.</p>
+        </div>
+        <div class="card">
+          <h3>Workspaces</h3>
+          <p>Folder tree that respects <code>.gitignore</code>, full-text search, file operations, read-only Git status, and full session restore.</p>
+        </div>
+        <div class="card">
+          <h3>Export anything</h3>
+          <p>Self-contained HTML with inlined diagram SVGs, PDF, DOCX, plain text, cleaned Markdown, Reveal.js slides, and batch diagram export.</p>
+        </div>
+        <div class="card">
+          <h3>Quality tooling</h3>
+          <p>Markdown linter with editor markers, link checker, image asset manager, frontmatter editor, and autosave with crash-recovery snapshots.</p>
+        </div>
+        <div class="card">
+          <h3>Command-driven</h3>
+          <p>Every menu item, toolbar button, and shortcut runs through one registry — all searchable from the command palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section">
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <figure>
+          <img src="assets/05-mermaid-studio-dark.png" alt="Mermaid Studio with a sequence diagram" loading="lazy" />
+          <figcaption>Mermaid Studio — author, validate, and export diagrams</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/04-split-mermaid-light.png" alt="Split view in light mode" loading="lazy" />
+          <figcaption>Split view in light mode with live preview and outline</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/06-command-palette-dark.png" alt="Command palette" loading="lazy" />
+          <figcaption>Command palette — every action, searchable</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/01-welcome-dark.png" alt="Welcome screen in dark mode" loading="lazy" />
+          <figcaption>Dark and light themes, with native title bar sync</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="download" class="section">
+      <h2>Download</h2>
+      <p class="section-note">
+        Grab the latest build from the
+        <a href="https://github.com/rickcollette/markforge/releases" target="_blank" rel="noopener">GitHub Releases</a> page.
+        Installed copies update themselves via <em>Help&nbsp;→ Check for Updates</em>
+        (Windows installer and AppImage builds).
+      </p>
+      <p class="section-note">Latest version: <strong id="latest-version">1.0.0</strong></p>
+      <div class="grid downloads">
+        <div class="card">
+          <h3>Windows 10 / 11</h3>
+          <p><code>markforge-1.0.0-windows-x64.exe</code></p>
+          <p>Self-contained NSIS installer — includes the WebView2 runtime, no internet required. Associates <code>.md</code> and <code>.mmd</code> files.</p>
+          <p><a class="btn btn-primary" href="https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-windows-x64.exe">Download for Windows</a></p>
+        </div>
+        <div class="card">
+          <h3>Linux — AppImage</h3>
+          <p><code>markforge-1.0.0-linux-amd64.AppImage</code></p>
+          <p>Fully self-contained, runs on any distro with glibc&nbsp;2.36+ (Debian&nbsp;12, Ubuntu&nbsp;22.04, and newer). No installation needed.</p>
+          <p><a class="btn btn-primary" href="https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-linux-amd64.AppImage">Download AppImage</a></p>
+        </div>
+        <div class="card">
+          <h3>Ubuntu 24.04</h3>
+          <p><code>markforge-1.0.0-ubuntu-24.04-amd64.deb</code></p>
+          <p>Native package; <code>apt</code> resolves all dependencies automatically.</p>
+          <p><a class="btn btn-primary" href="https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-ubuntu-24.04-amd64.deb">Download .deb</a></p>
+        </div>
+        <div class="card">
+          <h3>Debian 12</h3>
+          <p><code>markforge-1.0.0-debian-12-amd64.deb</code></p>
+          <p>Native package; also installs on Ubuntu&nbsp;22.04+ and other Debian-based distros.</p>
+          <p><a class="btn btn-primary" href="https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-debian-12-amd64.deb">Download .deb</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      MIT License · © 2026 Rick Collette
+      (<a href="mailto:megalith@root.sh">megalith@root.sh</a>) ·
+      <a href="https://github.com/rickcollette" target="_blank" rel="noopener">@rickcollette</a> ·
+      <a href="https://github.com/rickcollette/markforge" target="_blank" rel="noopener">rickcollette/markforge</a>
+    </p>
+    <p class="footer-tech">Built with Tauri 2, Rust, React, Monaco, and Mermaid.</p>
+  </footer>
+</body>
+</html>

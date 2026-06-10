@@ -1,0 +1,178 @@
+/* MarkForge site — matches the app's dark theme tokens. */
+:root {
+  --bg: #0f1115;
+  --bg-panel: #151922;
+  --bg-card: #1b2130;
+  --border: #2a3142;
+  --text: #f2f5f8;
+  --text-2: #aeb7c5;
+  --muted: #737d8c;
+  --accent: #7aa2ff;
+  --orange: #f08020;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, kbd {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.9em;
+}
+
+/* The lettering logo is dark navy; invert it for the dark site while
+   keeping the orange accent readable. */
+.brand-lettering, .hero-lettering {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-icon { height: 26px; width: 26px; }
+.brand-lettering { height: 14px; }
+.nav-links { display: flex; gap: 22px; font-size: 14px; }
+.nav-links a { color: var(--text-2); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 20px 40px;
+  text-align: center;
+}
+.hero-icon { height: 96px; width: 96px; }
+.hero-lettering { height: 40px; display: block; margin: 18px auto 0; }
+.tagline {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 18px 0 6px;
+}
+.subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--text-2);
+  font-size: 15px;
+}
+.cta { margin: 26px 0 10px; display: flex; gap: 12px; justify-content: center; }
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--bg-card);
+}
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+.btn-primary {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #14181f;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+.hero-shot {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+.section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.section-note { text-align: center; color: var(--text-2); margin: 0 0 28px; }
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.card h3 { margin: 0 0 8px; font-size: 16px; color: var(--orange); }
+.card p { margin: 0 0 8px; font-size: 13.5px; color: var(--text-2); }
+.card p:last-child { margin-bottom: 0; }
+
+/* ---------- Screenshots ---------- */
+.shots {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 22px;
+}
+.shots figure { margin: 0; }
+.shots img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.shots figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 20px 40px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.footer p { margin: 4px 0; }
+.footer-tech { color: var(--muted); font-size: 12.5px; }
+
+@media (max-width: 560px) {
+  .nav-links { gap: 14px; }
+  .hero { padding-top: 48px; }
+  .shots { grid-template-columns: 1fr; }
+}

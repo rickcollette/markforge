@@ -1,0 +1,58 @@
+# Build MarkForge .deb for Debian 12 (Bookworm) — the oldest Debian release
+# that ships Tauri v2's required WebKitGTK 4.1. The resulting .deb also
+# installs on Ubuntu 22.04+ and newer Debian-based distros.
+# Usage:
+#   docker build -f docker/Dockerfile.debian-12 -t markforge-build:debian12 .
+#   docker create --name mf-d12 markforge-build:debian12
+#   docker cp mf-d12:/app/src-tauri/target/release/bundle/deb/. ./dist-packages/debian-12/
+#   docker rm mf-d12
+FROM debian:bookworm
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Tauri v2 Linux prerequisites + deb packaging tools.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    ca-certificates \
+    curl \
+    wget \
+    file \
+    pkg-config \
+    libwebkit2gtk-4.1-dev \
+    libgtk-3-dev \
+    libayatana-appindicator3-dev \
+    librsvg2-dev \
+    libxdo-dev \
+    libssl-dev \
+    patchelf \
+    squashfs-tools \
+    desktop-file-utils \
+    xdg-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Node.js 22 (frontend toolchain).
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Rust (stable, minimal profile).
+RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+WORKDIR /app
+
+# Dependency layers first for docker cache friendliness.
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+
+# AppImage tooling runs inside docker without FUSE via extract-and-run.
+ENV APPIMAGE_EXTRACT_AND_RUN=1 \
+    NO_STRIP=true
+
+# deb: standard package with apt-managed dependencies.
+# appimage: fully self-contained bundle (WebKitGTK and friends included).
+RUN npm run tauri build -- --bundles deb appimage
+
+# Artifacts land in /app/src-tauri/target/release/bundle/{deb,appimage}/

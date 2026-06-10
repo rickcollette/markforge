@@ -1,0 +1,15 @@
+{
+    "version":  "1.0.0",
+    "notes":  "Fix window close; add in-app updates.",
+    "pub_date":  "2026-06-10T01:32:31Z",
+    "platforms":  {
+                      "windows-x86_64":  {
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRb0NrWWRNdXVmSXd4WG1neGJuZGc4UzFxTGJkWGtMZUpXM09oc0JaenVOZFlDdlg0Mmc3OFR6Z1lsc2VHRnZkOXhxQi9WcDVCSkgzeGFuRDl6eWcyd29BZk4rS2lGbUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxMDU1MTQ3CWZpbGU6bWFya2ZvcmdlLTEuMC4wLXdpbmRvd3MteDY0LmV4ZQo2UUNCbmttRkFVck55U3p3L1NoSGk3QThiekRkcHNPR1RQTEM0TldqL2lBU2p5MnVVQTArWU1ndys2djJuelQ1azlaU3pNOVlLdElaQmNkU1FYbHZCUT09Cg==",
+                                             "url":  "https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-windows-x64.exe"
+                                         },
+                      "linux-x86_64":  {
+                                           "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRb0NrWWRNdXVmSTJKejVJMStpREthZEtnSE9hRHZLNUxPb3JMbE5YUVR4OXFZb3J6ZURYQVhKUFJYNzhyMXM5LzFKMmI4OUp5aVVLRjVSY2JWTW9pNk5QbC9JZnFMUFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxMDU1MTUwCWZpbGU6bWFya2ZvcmdlLTEuMC4wLWxpbnV4LWFtZDY0LkFwcEltYWdlCnVldW42YUZvclVEc0ZkMUZHK1YzSThZek5aOFd2YW44enc4MnZxVmJYWlhxVGtCL2FBamRlMlhvVDNGKzNvekZTWTAvV1c5ZEZBRldxUXpBeTh6UUFBPT0K",
+                                           "url":  "https://github.com/rickcollette/markforge/releases/download/v1.0.0/markforge-1.0.0-linux-amd64.AppImage"
+                                       }
+                  }
+}
